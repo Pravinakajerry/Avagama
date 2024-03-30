@@ -1,29 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Read OS: Chrome App",
+  "name": "Avagama",
   "version": "1.0",
-  "permissions": [
-    "activeTab",
-    "https://api.openai.com/v1/chat/completions"
-  ],
+  "description": "Avagama - Understand words better with context",
+  "permissions": ["activeTab", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["contentt.js"]
+      "js": ["main.js"]
     }
   ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon16.png",
-      "48": "images/icon48.png",
-      "128": "images/icon128.png"
+      "16": "images/16.png",
+      "24": "images/24.png",
+      "48": "images/48.png",
+      "128": "images/128.png"
     }
-  },
-  
-  "icons": {
-    "16": "images/icon16.png",
-    "48": "images/icon48.png",
-    "128": "images/icon128.png"
   }
 }
